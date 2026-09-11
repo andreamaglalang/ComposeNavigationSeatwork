@@ -13,6 +13,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
@@ -29,29 +30,30 @@ fun HomeScreen(
         modifier = modifier
             .fillMaxSize()
             .padding(16.dp),
-        verticalArrangement = Arrangement.spacedBy(16.dp)
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
     ) {
         Text(
             text = "Student Information",
             style = MaterialTheme.typography.headlineMedium
         )
 
-        Text(text = "Name: Andrea Maglalang")
-        Text(text = "Course: BS Computer Engineering")
-        Text(text = "Year: 4")
+        Text(text = "Name: Andrea Maglalang", modifier = Modifier.padding(top = 16.dp))
+        Text(text = "Course: BS Computer Engineering", modifier = Modifier.padding(top = 4.dp))
+        Text(text = "Year: 4", modifier = Modifier.padding(top = 4.dp))
 
         Button(
             onClick = { onViewDetailsClick() },
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.padding(top = 24.dp)
         ) {
             Text("View Details")
         }
 
-        Text(text = "Login Attempts: $loginAttempts")
+        Text(text = "Login Attempts: $loginAttempts", modifier = Modifier.padding(top = 32.dp))
 
         Button(
             onClick = { loginAttempts++ },
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.padding(top = 8.dp)
         ) {
             Text("Add Attempt")
         }
